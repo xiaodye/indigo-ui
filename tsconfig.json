@@ -12,5 +12,5 @@
       "cobalt-ui/*": ["src/*", "*"]
     }
   },
-  "include": [".dumirc.ts", "src/**/*"]
+  "include": [".dumirc.ts", "setupJestDom.ts", "src/**/*"]
 }
