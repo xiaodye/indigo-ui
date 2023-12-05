@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode, useContext, useMemo } from 'react';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode, useContext, useMemo } from 'react';
 import { globalCtx } from '../GlobalConfig';
 import { GlobalConfigProps } from '../GlobalConfig/interface';
 
