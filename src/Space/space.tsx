@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { Children, FC, ReactNode, memo, useMemo } from 'react';
 import { AlignItemsType, AlignType, SizeType, SpaceProps, spaceAlignParams } from './types';
 
-const gap_size_map = new Map<SizeType, number>([
+const gap_size_map = new Map<Omit<SizeType, number>, number>([
   ['mini', 4],
   ['small', 8],
   ['medium', 16],
@@ -45,7 +45,7 @@ const Space: FC<SpaceProps> = ({
       style={{
         ...spaceStyle,
         gap: Array.isArray(size)
-          ? [...size, '']?.join('px ')
+          ? `${size[0]}px ${size[1]}px`
           : typeof size === 'number'
           ? `${size}px`
           : `${gap_size_map.get(size)}px`,
