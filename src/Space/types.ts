@@ -29,7 +29,7 @@ type SpaceProps = {
    * @description 间距大小
    * @default small
    */
-  size?: SizeType | number | Array<number>;
+  size?: SizeType | number | [number, number];
   /**
    * @description 垂直对齐方式
    * @default center
