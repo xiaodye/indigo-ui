@@ -4,7 +4,7 @@ type SizeType = 'mini' | 'small' | 'medium' | 'large';
 type AlignType = 'start' | 'center' | 'end' | 'baseline';
 type AlignItemsType = 'flex-start' | 'center' | 'flex-end' | 'baseline';
 
-type spaceAlignParams = {
+type SpaceAlignParamsType = {
   display?: 'flex';
   flexDirection?: 'row' | 'column';
   alignItems?: AlignItemsType;
@@ -37,4 +37,4 @@ type SpaceProps = {
   align?: AlignType;
 };
 
-export { SpaceProps, spaceAlignParams, SizeType, AlignType, AlignItemsType };
+export { SpaceProps, SpaceAlignParamsType, SizeType, AlignType, AlignItemsType };
