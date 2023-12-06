@@ -1,10 +1,11 @@
 {
-  "cSpell.words": [
-    "commitlint",
-    "dumi",
-    "dumirc",
-    "packagejson",
-    "stylelint",
-    "umijs"
-  ]
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "eslint.enable": true,
+  "typescript.preferences.jsxAttributeCompletionStyle": "auto",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never"
+  },
+  "cSpell.words": ["ahooks", "commitlint", "dumi", "dumirc", "packagejson", "stylelint", "umijs"]
 }
