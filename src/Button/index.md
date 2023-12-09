@@ -1,25 +1,39 @@
-# Button
+# Button 按钮
 
-网页常用 button 按钮，常用于响应一个事件或处理某个逻辑。
+按钮用于开始一个即时操作。
 
-```tsx
-import { FC } from 'react';
-import { Button } from 'cobalt-ui';
-import React, { FC } from 'react';
+## 何时使用
 
-const App: FC = () => {
-  return (
-    <div style={{ display: 'flex', columnGap: 20 }}>
-      <Button>默认按钮</Button>
-      <Button type="primary">主要按钮</Button>
-      <Button type="warning">警告按钮</Button>
-      <Button type="danger">失败按钮</Button>
-      <Button type="info">信息按钮</Button>
-      <Button type="link">链接按钮</Button>
-      <Button type="dashed">虚线按钮</Button>
-    </div>
-  );
-};
+标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。
 
-export default App;
-```
+- 我们提供了 7 种按钮。
+
+- 禁用：行动点不可用的时候，一般需要文案解释。
+
+## 基本使用
+
+最基础的按钮，共有 7 种状态。
+
+<code src="./demos/basic.tsx"></code>
+
+## 按钮尺寸
+
+<!-- 自定义宽高配置不同尺寸按钮。 -->
+
+按钮有大、中、小三种尺寸。
+
+通过设置 size 为 large small 分别把按钮设为大、小尺寸。若不设置 size，则尺寸为中。
+
+<code src="./demos/size.tsx"></code>
+
+## 圆角按钮
+
+配置 circle 变成圆按钮。
+
+<code src="./demos/circle.tsx"></code>
+
+## 禁用按钮
+
+配置 disabled 禁用按钮。
+
+<code src="./demos/disabled.tsx"></code>
