@@ -1,5 +1,7 @@
 import Button from './Button';
 import GlobalConfig from './GlobalConfig';
-import { Space } from './Space';
+import Menu from './Menu';
+import Space from './Space';
+import { Switch } from './Switch';
 
-export { Button, GlobalConfig, Space };
+export { Button, GlobalConfig, Space, Menu, Switch };

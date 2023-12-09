@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { Children, FC, ReactNode, memo, useMemo } from 'react';
-import { AlignItemsType, AlignType, SizeType, SpaceProps, spaceAlignParams } from './types';
+import { AlignItemsType, AlignType, SizeType, SpaceAlignParamsType, SpaceProps } from './types';
 
 const gap_size_map = new Map<SizeType, number>([
   ['mini', 4],
@@ -28,7 +28,7 @@ const Space: FC<SpaceProps> = ({
   const childrenList = Children.toArray(children);
 
   const spaceStyle = useMemo(() => {
-    const style: spaceAlignParams = direction === 'horizontal' ? { alignItems: align_map.get(align) } : {};
+    const style: SpaceAlignParamsType = direction === 'horizontal' ? { alignItems: align_map.get(align) } : {};
 
     if (direction === 'vertical') {
       style.flexDirection = 'column';
@@ -45,7 +45,7 @@ const Space: FC<SpaceProps> = ({
       style={{
         ...spaceStyle,
         gap: Array.isArray(size)
-          ? [...size, '']?.join('px ')
+          ? `${size[0]}px ${size[1]}px`
           : typeof size === 'number'
           ? `${size}px`
           : `${gap_size_map.get(size)}px`,
