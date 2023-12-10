@@ -1,7 +1,7 @@
-import Button from './Button';
 import GlobalConfig from './GlobalConfig';
-import Menu from './Menu';
-import Space from './Space';
-import { Switch } from './Switch';
+import Button from './components/Button';
+import Menu from './components/Menu';
+import Space from './components/Space';
+import { Switch } from './components/Switch';
 
 export { Button, GlobalConfig, Space, Menu, Switch };

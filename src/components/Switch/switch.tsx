@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { CSSProperties, ReactNode, forwardRef, useContext, useEffect, useMemo, useState } from 'react';
-import { globalCtx } from '../GlobalConfig';
-import { GlobalConfigProps } from '../GlobalConfig/interface';
+import { globalCtx } from '../../GlobalConfig';
+import { GlobalConfigProps } from '../../GlobalConfig/interface';
 
 type SwitchProps = {
   /**
