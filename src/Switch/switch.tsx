@@ -43,7 +43,7 @@ type SwitchProps = {
   /**
    * @description 改变回调函数
    */
-  handleChange?: (param: any) => void;
+  onChange?: (checked: boolean) => void;
 };
 
 const Switch = forwardRef<HTMLDivElement, SwitchProps>(
@@ -57,7 +57,7 @@ const Switch = forwardRef<HTMLDivElement, SwitchProps>(
       checkedChildren,
       unCheckedChildren,
       loading,
-      handleChange,
+      onChange,
     },
     ref,
   ) => {
@@ -86,7 +86,7 @@ const Switch = forwardRef<HTMLDivElement, SwitchProps>(
     const toggleSwitch = () => {
       if (disabled || loading) return;
       setSwitchStatus(!switchStatus);
-      handleChange?.(!switchStatus);
+      onChange?.(!switchStatus);
     };
 
     const switchStyle = useMemo(() => {
@@ -109,15 +109,15 @@ const Switch = forwardRef<HTMLDivElement, SwitchProps>(
 
     useEffect(() => {
       if (checkedChildren && unCheckedChildren && document.querySelector('.cobalt-switch-child')) {
-        setSwitchChildWidth((document.querySelector('.cobalt-switch-child') as any).clientWidth);
-        setSwitchWidth((document.querySelector('.cobalt-switch-child') as any).clientWidth + 30);
+        setSwitchChildWidth((document.querySelector('.cobalt-switch-child') as HTMLDivElement).clientWidth);
+        setSwitchWidth((document.querySelector('.cobalt-switch-child') as HTMLDivElement).clientWidth + 30);
       } else {
         setSwitchWidth(small ? 28 : 40);
       }
     }, [document.querySelector('.cobalt-switch-child')?.clientWidth, checkedChildren, unCheckedChildren]);
 
     return (
-      <div className={classes} style={{ ...style, ...(switchStyle as any) }} onClick={toggleSwitch} ref={ref}>
+      <div className={classes} style={{ ...style, ...switchStyle }} onClick={toggleSwitch} ref={ref}>
         <div className="cobalt-switch-dot">{loading}</div>
         {checkedChildren && unCheckedChildren && (
           <div className="cobalt-switch-child">{switchStatus ? checkedChildren : unCheckedChildren}</div>
