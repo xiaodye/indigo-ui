@@ -14,43 +14,13 @@
 
 相邻组件水平间距。
 
-```tsx
-import { Button, Space } from 'cobalt-ui';
-import { FC } from 'react';
-
-const App: FC = () => {
-  return (
-    <Space>
-      <Button type="primary">Button1</Button>
-      <Button type="primary">Button2</Button>
-      <Button type="primary">Button3</Button>
-    </Space>
-  );
-};
-
-export default App;
-```
+<code src="./demos/basic.tsx"></code>
 
 ## 垂直间距
 
 可以设置垂直方向排列的间距。
 
-```tsx
-import { Button, Space } from 'cobalt-ui';
-import { FC } from 'react';
-
-const App: FC = () => {
-  return (
-    <Space direction="vertical">
-      <Button type="primary">Button1</Button>
-      <Button type="primary">Button2</Button>
-      <Button type="primary">Button3</Button>
-    </Space>
-  );
-};
-
-export default App;
-```
+<code src="./demos/direction.tsx"></code>
 
 ## 间距大小
 
@@ -58,47 +28,4 @@ export default App;
 
 通过设置 size 为 large middle 分别把间距设为大、中间距。若不设置 size，则间距为小。
 
-```tsx
-import { Button, Space } from 'cobalt-ui';
-import { FC, useState } from 'react';
-
-const App: FC = () => {
-  const [size, setSize] = useState<'mini' | 'small' | 'medium' | 'large'>('small');
-
-  return (
-    <>
-      <Space align="end">
-        <Button type="info" onClick={() => setSize('small')}>
-          small
-        </Button>
-        <Button type="info" onClick={() => setSize('medium')}>
-          medium
-        </Button>
-        <Button type="info" onClick={() => setSize('large')}>
-          large
-        </Button>
-      </Space>
-      <br />
-      <br />
-      <Space size={size}>
-        <Button type="primary">Primary</Button>
-        <Button>Default</Button>
-        <Button type="dashed">Dashed</Button>
-        <Button type="link">Link</Button>
-      </Space>
-
-      <br />
-      <br />
-
-      <Space size={[10, 10]}>
-        <Button type="primary">Primary</Button>
-        <Button>Default</Button>
-        <Button type="dashed">Dashed</Button>
-        <Button type="link">Link</Button>
-      </Space>
-    </>
-  );
-};
-
-export default App;
-```
+<code src="./demos/size.tsx"></code>

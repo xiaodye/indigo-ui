@@ -29,7 +29,7 @@ const App: FC = () => {
       <br />
       <br />
 
-      <Space size={[10, 10]}>
+      <Space size={[30, 30]}>
         <Button type="primary">Primary</Button>
         <Button>Default</Button>
         <Button type="dashed">Dashed</Button>
