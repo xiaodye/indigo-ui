@@ -53,7 +53,7 @@ interface MenuHeightProps {
 
 interface RenderOptions {
   label: string;
-  key: string | number;
+  key: string;
   level?: string | number;
   icon?: JSX.Element | null;
   children?: Array<any> | null | undefined;
@@ -85,27 +85,29 @@ const Menu: FC<MenuProps> = ({
 
   const initParentMenuHeight = (item: Array<RenderOptions>, obj: any, fatherKey: string | number) => {
     // 初始化父级菜单高度
-    item?.forEach((m) => {
-      if (m.children) {
-        if (m.level === 1) {
-          obj[m.key] = {
-            key: m.key,
+    item.forEach((menuItem) => {
+      if (menuItem.children) {
+        if (menuItem.level === 1) {
+          obj[menuItem.key] = {
+            key: menuItem.key,
             height: `${menuItemHeight}px`,
-            childNum: m.children.length,
-            level: m.level,
+            childNum: menuItem.children.length,
+            level: menuItem.level,
             children: [],
           };
         } else {
           obj[fatherKey]?.children.push({
-            key: m.key,
+            key: menuItem.key,
             height: `${menuItemHeight}px`,
-            childNum: m.children.length,
-            level: m.level,
+            childNum: menuItem.children.length,
+            level: menuItem.level,
           });
         }
-        initParentMenuHeight(m.children, obj, m.level && m.level === 1 ? m.key : '');
+
+        initParentMenuHeight(menuItem.children, obj, menuItem.level && menuItem.level === 1 ? menuItem.key : '');
       }
     });
+
     return obj;
   };
 
@@ -183,7 +185,7 @@ const Menu: FC<MenuProps> = ({
     }
   };
 
-  const firstMenuHeight = (key: number) => {
+  const firstMenuHeight = (key: string) => {
     // 第一级菜单高度
     if (parentMenuHeightList[key]) {
       return {
@@ -196,7 +198,7 @@ const Menu: FC<MenuProps> = ({
   };
 
   const childMenuHeight = useCallback(
-    (key: number) => {
+    (key: string) => {
       // 第二级菜单高度
       // eslint-disable-next-line guard-for-in
       for (const i in parentMenuHeightList) {
@@ -284,34 +286,32 @@ const Menu: FC<MenuProps> = ({
   return (
     <div
       className={classes}
-      style={
-        {
-          width,
-          ...style,
-        } as any
-      }
+      style={{
+        width,
+        ...style,
+      }}
     >
-      {items?.map((m: any) => {
+      {items.map((menuItem) => {
         return (
-          <div key={m.key}>
-            <div className={`menu-options`} style={firstMenuHeight(m.key)}>
+          <div key={menuItem.key}>
+            <div className={`menu-options`} style={firstMenuHeight(menuItem.key)}>
               <div
-                className={nowActiveMainKey === m.key ? `menu-activeFatherTitle` : `menu-fatherTitle`}
-                onClick={(e) => toggleFirstMenu(m, e)}
+                className={nowActiveMainKey === menuItem.key ? `menu-activeFatherTitle` : `menu-fatherTitle`}
+                onClick={(e) => toggleFirstMenu(menuItem, e)}
               >
                 <div className="left">
-                  <i>{m.icon}</i>
-                  <span className="menu-label">{m.label}</span>
+                  <i>{menuItem.icon}</i>
+                  <span className="menu-label">{menuItem.label}</span>
                 </div>
                 <span className="menu-icon">
-                  {firstMenuHeight(m.key).height === `${menuItemHeight}px` ? (
+                  {firstMenuHeight(menuItem.key).height === `${menuItemHeight}px` ? (
                     <CaretDownOutlined />
                   ) : (
                     <CaretUpOutlined />
                   )}
                 </span>
               </div>
-              <>{m.children && renderChildOptions(m)}</>
+              <>{menuItem.children && renderChildOptions(menuItem)}</>
             </div>
           </div>
         );

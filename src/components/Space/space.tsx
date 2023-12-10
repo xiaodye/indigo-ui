@@ -52,7 +52,7 @@ const Space: FC<SpaceProps> = ({
         ...style,
       }}
     >
-      {childrenList?.map((child: ReactNode, index: number) => {
+      {childrenList.map((child: ReactNode, index: number) => {
         return (
           <div key={index} className="space-item">
             {child}

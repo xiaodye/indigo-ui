@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode, useContext, useMemo } from 'react';
-import { globalCtx } from '../GlobalConfig';
-import { GlobalConfigProps } from '../GlobalConfig/interface';
+import { globalCtx } from '../../GlobalConfig';
+import { GlobalConfigProps } from '../../GlobalConfig/interface';
 
 type BaseButtonProps = {
   /**
