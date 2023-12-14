@@ -1,6 +1,4 @@
-.cobalt-input-inner,
-.cobalt-input-inner-error,
-.cobalt-input-inner-warning {
+.cobalt-input-inner {
   display: inline-flex;
   width: 100%;
   align-items: center;
@@ -51,10 +49,6 @@
 
 .cobalt-input-inner-error {
   border: 1px solid $input-error-color;
-
-  i {
-    color: $input-error-color;
-  }
 }
 
 .cobalt-input-inner-error:hover {
@@ -68,10 +62,6 @@
 
 .cobalt-input-inner-warning {
   border: 1px solid $input-warning-color;
-
-  i {
-    color: $input-warning-color;
-  }
 }
 
 .cobalt-input-inner-warning:hover {
