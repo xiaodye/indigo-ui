@@ -1,0 +1,74 @@
+.cobalt-input-inner {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  transition: all 0.3s;
+  border: 1px solid $input-border-color;
+  padding: 0 10px;
+  box-sizing: border-box;
+  justify-content: center;
+  height: 36px;
+  color: $input-text-color;
+  overflow: hidden;
+
+  .cobalt-input {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    font-size: 14px;
+    transition: all 0.3s;
+    outline: none;
+    border: none;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.5714285714285714;
+    list-style: none;
+  }
+
+  .cobalt-input::placeholder {
+    color: $input-disabled-color;
+  }
+
+  .cobalt-input-prefix {
+    margin-left: 4px;
+  }
+
+  .cobalt-input-suffix {
+    margin-right: 4px;
+  }
+}
+
+.cobalt-input-inner:hover {
+  border: 1px solid $input-border-color-hover;
+}
+
+.cobalt-input-inner:focus-within {
+  border: 1px solid $input-border-color-hover;
+  box-shadow: 0 0 0 1px $input-color-outline-shadow;
+}
+
+.cobalt-input-inner-error {
+  border: 1px solid $input-error-color;
+}
+
+.cobalt-input-inner-error:hover {
+  border: 1px solid $input-error-color;
+}
+
+.cobalt-input-inner-error:focus-within {
+  border: 1px solid $input-error-color;
+  box-shadow: $input-color-error-shadow;
+}
+
+.cobalt-input-inner-warning {
+  border: 1px solid $input-warning-color;
+}
+
+.cobalt-input-inner-warning:hover {
+  border: 1px solid $input-warning-color;
+}
+
+.cobalt-input-inner-warning:focus-within {
+  border: 1px solid $input-warning-color;
+  box-shadow: $input-color-warning-shadow;
+}
