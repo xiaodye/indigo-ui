@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { FC, ReactNode, RefObject, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import type { TooltipAlign } from './types';
 
 type TooltipElProps = {
   content: string | ReactNode;
@@ -9,7 +10,7 @@ type TooltipElProps = {
   width: number;
   height: number;
   cRef: RefObject<any>;
-  align?: string;
+  align?: TooltipAlign;
   color?: string;
   zIndex?: number;
 };

@@ -1,8 +1,9 @@
 import classNames from 'classnames';
-import React, { CSSProperties, FC, useRef } from 'react';
+import { CSSProperties, FC, ReactNode, useRef } from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.scss';
 import TooltipEl from './tooltipItem';
+import type { TooltipAlign } from './types';
 
 const el = document.createElement('div');
 el.className = 'mzl_position-container';
@@ -13,9 +14,9 @@ if (!document.querySelector('.mzl_position-container')) {
 type TooltipProps = {
   style?: CSSProperties;
   className?: string;
-  children: React.ReactNode;
-  content: string | React.ReactNode;
-  align?: 'top' | 'bottom' | 'left' | 'right';
+  children: ReactNode;
+  content: ReactNode;
+  align?: TooltipAlign;
   color?: string;
   onOpenChange?: (flag: boolean) => void;
   zIndex?: number;
