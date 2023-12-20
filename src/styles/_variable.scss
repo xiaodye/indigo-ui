@@ -99,8 +99,9 @@ $translate-md: 16px;
 $translate-lg: 22px;
 
 // 边框 和 border radius
-
 $border-width: 1px !default;
+
+$border-color-base: $gray-200 !default;
 $border-color: $gray-300 !default;
 
 $border-radius: 6px !default;

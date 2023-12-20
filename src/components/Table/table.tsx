@@ -1,47 +1,45 @@
 import classNames from 'classnames';
-import { CSSProperties } from 'react';
+import { CSSProperties, FC } from 'react';
 import { Empty } from '../Empty';
-import './style.scss';
+import type { ColumnsType, TableSize } from './types';
 
-export type TableProps = {
-  headStyle?: CSSProperties;
-  bodyStyle?: CSSProperties;
+type TableProps = {
   className?: string;
+  style?: CSSProperties;
   border?: boolean;
-  columns: Array<any>;
-  dataSource: Array<any>;
-  size?: 'large' | 'middle' | 'small';
+  columns: ColumnsType[];
+  dataSource: object[];
+  size?: TableSize;
 };
-export default function Table(props: TableProps): JSX.Element {
-  const { headStyle, bodyStyle, className, border, columns, dataSource, size } = props;
-  const tableClass = classNames({
-    mzl_table_inner: true,
-    [className || '']: !!className,
-  });
+
+const Table: FC<TableProps> = ({ style, className, border = false, columns, dataSource, size = 'large' }) => {
+  const rootClasses = classNames('cobalt-table-inner', className);
+
   const theadTrClass = classNames({
-    mzl_table_thead_th: true,
-    mzl_table_thead_th_boder: border,
-    [`mzl_table_thead_th_size_${size}`]: size,
+    'cobalt-table-thead-th': true,
+    'cobalt-table-thead-th-border': border,
+    [`cobalt-table-thead-th-size-${size}`]: size,
   });
+
   const tbodyTrClass = classNames({
-    mzl_table_tbody_td: true,
-    mzl_table_tbody_td_boder: border,
-    [`mzl_table_tbody_td_size_${size}`]: size,
+    'cobalt-table-tbody-td': true,
+    'cobalt-table-tbody-td-border': border,
+    [`cobalt-table-tbody-td-size-${size}`]: size,
   });
+
   return (
-    <div className={tableClass}>
-      <table className="mzl_table_content">
-        <thead className="mzl_table_thead">
-          <tr className="mzl_table_thead_tr">
+    <div className={rootClasses} style={style}>
+      <table className="cobalt-table-content">
+        <thead className="cobalt-table-thead">
+          <tr className="cobalt-table-thead-tr">
             {columns && columns.length
               ? columns.map((item: any, index: number) => {
                   const thStyle = {
                     ...item.style,
-                    ...headStyle,
                     textAlign: item.align ? item.align : '',
                   };
                   return (
-                    <th className={theadTrClass} key={item.field + index} style={thStyle}>
+                    <th className={theadTrClass} key={item.dataIndex + index} style={thStyle}>
                       {item.title}
                     </th>
                   );
@@ -49,28 +47,28 @@ export default function Table(props: TableProps): JSX.Element {
               : null}
           </tr>
         </thead>
-        <tbody className="mzl_table_tbody">
+
+        <tbody className="cobalt-table-tbody">
           {dataSource && dataSource.length ? (
-            dataSource.map((item: any, index: number) => (
-              <tr className="mzl_table_tbody_tr" key={index + Math.random()}>
+            dataSource.map((item: any, index) => (
+              <tr className="cobalt-table-tbody-tr" key={index + Math.random()}>
                 {columns && columns.length
-                  ? columns.map((column: any, i: number) => {
+                  ? columns.map((column: any, i) => {
                       const tdStyle = {
-                        ...bodyStyle,
                         width: column.width ? `${column.width}px` : '',
                         textAlign: column.align ? column.align : '',
                       };
                       const tdContent = column.render
                         ? column.render(item)
-                        : item[column.field] !== undefined
-                        ? item[column.field]
+                        : item[column.dataIndex] !== undefined
+                        ? item[column.dataIndex]
                         : '';
                       return (
                         <td
-                          className={[tbodyTrClass, column.ellipsis ? 'mzl_table_tbody_td_ellipsis' : ''].join(' ')}
+                          className={[tbodyTrClass, column.ellipsis ? 'cobalt-table-tbody-td-ellipsis' : ''].join(' ')}
                           key={index + i}
                           style={tdStyle}
-                          title={column.ellipsis ? item[column.field] : ''}
+                          title={column.ellipsis ? item[column.dataIndex] : ''}
                         >
                           <div style={tdStyle}>{tdContent}</div>
                         </td>
@@ -90,12 +88,7 @@ export default function Table(props: TableProps): JSX.Element {
       </table>
     </div>
   );
-}
-
-Table.defaultProps = {
-  headStyle: '',
-  bodyStyle: '',
-  className: '',
-  border: false,
-  size: 'large',
 };
+
+export default Table;
+export type { TableProps, TableSize };
