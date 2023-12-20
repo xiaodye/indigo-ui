@@ -4,7 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 import type { TooltipAlign } from './types';
 
 type TooltipElProps = {
-  content: string | ReactNode;
+  content: ReactNode;
   left: number;
   top: number;
   width: number;
@@ -36,8 +36,8 @@ const TooltipEl: FC<TooltipElProps> = ({
   });
 
   const arrowClass = classNames({
-    'mzl_tooltip-arrow': true,
-    [`mzl_tooltip-arrow_${align}`]: true,
+    'cobalt-tooltip-arrow': true,
+    [`cobalt-tooltip-arrow_${align}`]: true,
   });
 
   useEffect(() => {
@@ -84,8 +84,8 @@ const TooltipEl: FC<TooltipElProps> = ({
 
   return (
     <CSSTransition in={showTooltip} timeout={150} classNames="tooltip" unmountOnExit>
-      <div className="mzl_tooltip_position" style={style} ref={divRef}>
-        <div className="mzl_tooltip_content" style={{ background: color }}>
+      <div className="cobalt-tooltip_position" style={style} ref={divRef}>
+        <div className="cobalt-tooltip_content" style={{ background: color }}>
           {content}
           <span className={arrowClass} style={{ background: color }} />
         </div>
