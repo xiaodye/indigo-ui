@@ -1,0 +1,70 @@
+.cobalt-tabs {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.cobalt-tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  //下划线 1px solid #dee2e6;
+  border-bottom: $tabs-border-width solid $tabs-border-color;
+}
+
+.cobalt-tabs-nav-item {
+  display: block;
+  padding: $tabs-link-padding-y $tabs-link-padding-x;
+  transition: color 0.3s;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $tabs-link-hover-color;
+  }
+
+  &.disabled {
+    color: $tabs-link-disabled-color;
+    background-color: transparent;
+    border-color: transparent;
+    cursor: default;
+    // pointer-events: none;
+  }
+
+  &.disabled:hover {
+    cursor: not-allowed;
+  }
+
+  &.active {
+    color: $tabs-link-active-color;
+  }
+}
+
+.nav-line {
+  .cobalt-tabs-nav-item {
+    &.active {
+      border-bottom: $tabs-border-width * 2 solid $tabs-link-active-color;
+    }
+  }
+}
+
+.nav-card {
+  .cobalt-tabs-nav-item {
+    margin-bottom: -$tabs-border-width;
+    border: $tabs-border-width solid transparent;
+
+    &.active {
+      border-top-left-radius: $tabs-border-radius;
+      border-top-right-radius: $tabs-border-radius;
+      background-color: $tabs-link-active-bg;
+      border-color: $tabs-link-active-border-color;
+    }
+  }
+}
+
+.cobalt-tabs-content {
+  &-item.hidden {
+    display: none;
+  }
+}
