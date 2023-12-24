@@ -10,13 +10,13 @@
 
 <code src="./demos/basic.tsx"></code>
 
-# 其他提示类型
+## 其他提示类型
 
 不同的提示状态：成功、警告、错误。
 
 <code src="./demos/type.tsx"></code>
 
-# 自定义时长
+## 自定义时长
 
 自定义时长 10s，默认时长为 3s
 

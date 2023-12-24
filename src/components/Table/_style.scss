@@ -1,0 +1,119 @@
+.cobalt-table-inner {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+
+  .cobalt-table-content {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-collapse: collapse;
+
+    .cobalt-table-thead {
+      text-align: left;
+
+      .cobalt-table-thead-th {
+        background: #fff;
+        padding: 14px;
+        box-sizing: border-box;
+        font-variant: tabular-nums;
+        line-height: 1.5715;
+        list-style: none;
+        font-feature-settings: 'tnum';
+        position: relative;
+        font-size: 14px;
+        color: $gray-900;
+        border-bottom: 0.5px solid $border-color-base;
+        overflow-wrap: break-word;
+      }
+
+      .cobalt-table-thead-th-size-large {
+        padding: 14px 12px;
+      }
+
+      .cobalt-table-thead-th-size-middle {
+        padding: 11px 10px;
+      }
+
+      .cobalt-table-thead-th-size-small {
+        padding: 7px 10px;
+        font-size: 13px;
+      }
+
+      .cobalt-table-thead-th-border {
+        border: 0.5px solid $border-color-base;
+      }
+    }
+
+    .cobalt-table-tbody {
+      height: auto;
+      text-align: left;
+
+      .cobalt-table-tbody-tr {
+        width: 100%;
+        transition: all 0.2s ease-in;
+        background: #fff;
+
+        &:hover {
+          background: $gray-100 !important;
+        }
+
+        .cobalt-table-tbody-td {
+          padding: 7px 12px;
+          box-sizing: border-box;
+          font-variant: tabular-nums;
+          line-height: 1.5715;
+          list-style: none;
+          font-feature-settings: 'tnum';
+          position: relative;
+          font-size: 14px;
+          color: $gray-900;
+          border-bottom: 0.5px solid $border-color-base;
+          overflow-wrap: break-word;
+        }
+
+        .cobalt-table-tbody-td-size-large {
+          padding: 9px 12px;
+        }
+
+        .cobalt-table-tbody-td-size-middle {
+          padding: 6px 10px;
+        }
+
+        .cobalt-table-tbody-td-size-small {
+          padding: 4px 10px;
+          font-size: 12px;
+        }
+
+        .cobalt-table-tbody-td-ellipsis {
+          box-sizing: border-box;
+
+          div {
+            // display: inline-block;
+            word-break: keep-all; // 不换行
+            white-space: nowrap; // 不换行
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+
+        .cobalt-table-tbody-td-border {
+          border: 0.5px solid $border-color-base;
+        }
+      }
+    }
+
+    .noTableData {
+      border: 0.5px solid $border-color-base;
+      border-top: none;
+      text-align: center;
+      position: relative;
+      height: 170px;
+
+      td {
+        width: 100%;
+        position: absolute;
+      }
+    }
+  }
+}
