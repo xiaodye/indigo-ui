@@ -1,6 +1,5 @@
 import { CSSProperties, FC, UIEvent, useState } from 'react';
-
-export type RowFC = FC<{ data: any[]; index: number; style: CSSProperties }>;
+import { RowFC } from './types';
 
 export type FixedSizeListProps = {
   /**
@@ -20,6 +19,9 @@ export type FixedSizeListProps = {
    * @description 列表行高
    */
   itemSize: number;
+  /**
+   * @description 需要渲染的数据列表
+   */
   itemData: any[];
   /**
    * @description children

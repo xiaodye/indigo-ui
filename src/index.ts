@@ -9,7 +9,7 @@ import { Switch } from './components/Switch';
 import { ColumnsType, Table } from './components/Table';
 import { Tabs, type TabItemType, type TabsProps } from './components/Tabs';
 import { Tooltip } from './components/Tooltip';
-import { FixedSizeList } from './components/VirtualList';
+import { FixedSizeList, VariableSizeList } from './components/VirtualList';
 import { message } from './components/message';
 
 export {
@@ -25,6 +25,7 @@ export {
   Table,
   Tabs,
   Tooltip,
+  VariableSizeList,
   message,
 };
 export type { ColumnsType, TabItemType, TabsProps };

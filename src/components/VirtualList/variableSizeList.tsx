@@ -1,145 +1,154 @@
-/**
- * 整体思路：
- * 1. 根据预估行高、数据长度计算得到总高度 -> 撑开容器，展示滚动条
- * 2. 维护一个列表用于计算元素位置
- * 3. 滚动时根据真实 DOM 更新上述列表，从而修正元素位置
- */
+import { CSSProperties, FC, UIEvent, useState } from 'react';
+import { RowFC } from './types';
 
-import React, { ReactNode, createElement, useRef, useState } from 'react';
-
-type VariableSizeListProps = {
+export type VariableSizeListProps = {
+  /**
+   * @description 列表可视区域高度
+   * @default -
+   */
+  height: number;
   /**
    * @description 列表可视区域宽度
    * @default -
    */
-  width?: number;
-  /**
-   * @description 列表可视区域高度
-   */
-  height: number;
+  width: number;
   /**
    * @description 列表数据长度
    */
   itemCount: number;
-  /**
-   * @description 列表行高
-   */
-  itemSize: number;
-  children: ReactNode;
+  itemEstimatedSize: number;
+  children: RowFC;
+  itemSize: (i: number) => number;
 };
 
-const VariableSizeList: React.FC<VariableSizeListProps> = ({ children, width, height, itemCount, itemSize = 50 }) => {
-  const [startIndex, setStartIndex] = useState(0); // 开始节点 index
-  const [startOffset, setStartOffset] = useState(0); // 偏移量
+// 元数据
+const measuredData = {
+  measuredDataMap: new Map<number, { size: number; offset: number }>(),
+  LastMeasuredItemIndex: -1,
+};
 
-  // 记录元素的位置、高度
-  const [position, setPosition] = useState(
-    new Array(itemCount).fill(0).map((_, idx) => ({
-      index: idx,
-      top: idx * itemSize,
-      bottom: (idx + 1) * itemSize,
-      height: itemSize,
-      isComputed: false,
-    })),
-  );
+const estimatedHeight = (defaultEstimatedItemSize: number = 50, itemCount: number) => {
+  let measuredHeight = 0;
+  const { measuredDataMap, LastMeasuredItemIndex } = measuredData;
 
-  // 结束节点 index
-  const _endIndex = position.findIndex((i) => i.bottom >= position[startIndex].top + height);
-  const endIndex = _endIndex > -1 ? _endIndex : position.length - 1;
-  // 存储对应元素
-  const elements = useRef<HTMLElement[]>([]);
-  // 总高度
-  const actualHeight = position[position.length - 1].bottom;
+  // 计算已经获取过真实高度的项的高度之和
+  if (LastMeasuredItemIndex >= 0) {
+    const lastMeasuredItem = measuredDataMap.get(LastMeasuredItemIndex)!;
+    measuredHeight = lastMeasuredItem.offset + lastMeasuredItem.size;
+  }
+  // 未计算过真实高度的项数
+  const unMeasuredItemsCount = itemCount - measuredData.LastMeasuredItemIndex - 1;
+  // 预测总高度
+  const totalEstimatedHeight = measuredHeight + unMeasuredItemsCount * defaultEstimatedItemSize;
 
-  // 每行元素样式
-  const getItemStyle = () => {
-    return {
-      width: '100%',
-    };
+  return totalEstimatedHeight;
+};
+
+const getItemMetaData = (props: VariableSizeListProps, index: number) => {
+  const { itemSize } = props;
+  const { measuredDataMap, LastMeasuredItemIndex } = measuredData;
+  // 如果当前索引比已记录的索引要大，说明要计算当前索引的项的size和offset
+  if (index > LastMeasuredItemIndex) {
+    let offset = 0;
+    // 计算当前能计算出来的最大offset值
+    if (LastMeasuredItemIndex >= 0) {
+      const lastMeasuredItem = measuredDataMap.get(LastMeasuredItemIndex)!;
+      offset += lastMeasuredItem.offset + lastMeasuredItem.size;
+    }
+    // 计算直到index为止，所有未计算过的项
+    for (let i = LastMeasuredItemIndex + 1; i <= index; i++) {
+      const currentItemSize = itemSize(i);
+      measuredDataMap.set(i, { size: currentItemSize, offset });
+      offset += currentItemSize;
+    }
+    // 更新已计算的项的索引值
+    measuredData.LastMeasuredItemIndex = index;
+  }
+  return measuredDataMap.get(index)!;
+};
+
+const getStartIndex = (props: VariableSizeListProps, scrollOffset: number) => {
+  const { itemCount } = props;
+  let index = 0;
+  while (true) {
+    const currentOffset = getItemMetaData(props, index).offset;
+    if (currentOffset >= scrollOffset) return index;
+    if (index >= itemCount) return itemCount;
+    index++;
+  }
+};
+
+const getEndIndex = (props: VariableSizeListProps, startIndex: number) => {
+  const { height, itemCount } = props;
+  // 获取可视区内开始的项
+  const startItem = getItemMetaData(props, startIndex);
+  // 可视区内最大的offset值
+  const maxOffset = startItem.offset + height;
+  // 开始项的下一项的offset，之后不断累加此offset，直到等于或超过最大offset，就是找到结束索引了
+  let offset = startItem.offset + startItem.size;
+  // 结束索引
+  let endIndex = startIndex;
+  // 累加offset
+  while (offset <= maxOffset && endIndex < itemCount - 1) {
+    endIndex++;
+    const currentItem = getItemMetaData(props, endIndex);
+    offset += currentItem.size;
+  }
+  return endIndex;
+};
+
+const getRangeToRender = (props: VariableSizeListProps, scrollOffset: number) => {
+  const { itemCount } = props;
+  const startIndex = getStartIndex(props, scrollOffset);
+  const endIndex = getEndIndex(props, startIndex);
+  return [Math.max(0, startIndex - 2), Math.min(itemCount - 1, endIndex + 2), startIndex, endIndex];
+};
+
+const VariableSizeList: FC<VariableSizeListProps> = (props) => {
+  const { height, width, itemCount, itemEstimatedSize, children: Child } = props;
+  const [scrollOffset, setScrollOffset] = useState(0);
+
+  const containerStyle: CSSProperties = {
+    position: 'relative',
+    width,
+    height,
+    overflow: 'auto',
+    willChange: 'transform',
   };
 
-  // 更新元素位置
-  const updatePosition = () => {
-    setPosition((_position) => {
-      for (let index = startIndex; index < _position.length; index++) {
-        // 已计算直接跳过
-        if (_position[index].isComputed) break;
-        // 无对应真实 DOM 跳过
-        const el = elements.current[index];
-        if (!el) break;
-
-        const target = _position[index];
-        // 通过真实 DOM 高度来更新元素高度
-        target.height = el.clientHeight;
-
-        if (index > 0) {
-          target.top = _position[index - 1].bottom;
-        }
-
-        target.bottom = target.top + target.height;
-        target.isComputed = true;
-      }
-
-      return _position;
-    });
+  const contentStyle = {
+    height: estimatedHeight(itemEstimatedSize, itemCount),
+    width: '100%',
   };
 
-  const onScroll = (event: any) => {
-    // 获取当前可视窗口节点
-    const currentEls: HTMLElement[] = Array.from(event.target.children[1].children);
-    currentEls.forEach((_el) => {
-      const _index = Number(_el.getAttribute('data-index') || 0);
-      elements.current[_index] = _el;
-    });
-    // 获取滑动条位置
-    const scrollTop = event.target.scrollTop;
-    // 计算起始节点
-    const _startIndex = position.findIndex((i) => i.top >= scrollTop);
-    setStartIndex(_startIndex);
-    // 计算偏移量
-    setStartOffset(_startIndex >= 1 ? position[_startIndex - 1]?.bottom : 0);
-    // 更新元素位置
-    updatePosition();
-  };
-
-  const render = () => {
+  const getCurrentChildren = () => {
+    const [startIndex, endIndex, originStartIndex, originEndIndex] = getRangeToRender(props, scrollOffset);
     const items = [];
-    for (let index = startIndex; index <= endIndex; index++) {
-      items.push(
-        createElement(children, {
-          index,
-          style: getItemStyle(),
-          key: index,
-          'data-index': index,
-        }),
-      );
+    for (let i = startIndex; i <= endIndex; i++) {
+      const item = getItemMetaData(props, i);
+      const itemStyle: CSSProperties = {
+        position: 'absolute',
+        height: item.size,
+        width: '100%',
+        top: item.offset,
+      };
+      items.push(<Child data={[]} key={i} index={i} style={itemStyle} />);
     }
     return items;
   };
 
+  /**
+   * 滚动处理函数
+   * @param event
+   */
+  const scrollHandle = (event: UIEvent<HTMLDivElement>) => {
+    const { scrollTop } = event.currentTarget;
+    setScrollOffset(scrollTop);
+  };
+
   return (
-    <div
-      style={{
-        position: 'relative',
-        overflow: 'auto',
-        willChange: 'transform',
-        width,
-        height,
-      }}
-      onScroll={onScroll}
-    >
-      <div style={{ height: actualHeight }} />
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          transform: `translateY(${startOffset}px)`,
-        }}
-      >
-        {render()}
-      </div>
+    <div style={containerStyle} onScroll={scrollHandle}>
+      <div style={contentStyle}>{getCurrentChildren()}</div>
     </div>
   );
 };
