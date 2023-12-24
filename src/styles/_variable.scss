@@ -297,6 +297,20 @@ $input-color-warning-shadow: $warning;
 $input-error-color: $danger;
 $input-warning-color: $warning;
 
+// 🟡 tabs
+$tabs-link-padding-y: 0.5rem;
+$tabs-link-padding-x: 1rem;
+$tabs-link-disabled-color: $disabled-selected-color;
+$tabs-border-color: #dee2e6;
+$tabs-border-width: 1px;
+$tabs-border-radius: 0.25rem;
+$tabs-link-hover-border-color: #e9ecef #e9ecef #dee2e6;
+$tabs-link-hover-color: $primary;
+$tabs-link-active-color: $primary;
+$tabs-link-active-bg: $white;
+$tabs-link-active-border-color: #dee2e6 #dee2e6 $white;
+$tabs-content-margin: 1rem;
+
 $width: 3vw;
 $commaWidth: 0.5vw;
 $gap: 0.2vw;

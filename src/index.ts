@@ -8,7 +8,8 @@ import Space from './components/Space';
 import { Switch } from './components/Switch';
 import { ColumnsType, Table } from './components/Table';
 import { Tooltip } from './components/Tooltip';
+import { Tabs, type TabItemType, type TabsProps } from './components/Tabs';
 import { message } from './components/message';
 
-export { Button, Divider, Empty, GlobalConfig, Input, Menu, Space, Switch, Table, Tooltip, message };
-export type { ColumnsType };
+export { Button, Divider, Empty, GlobalConfig, Input, Menu, Space, Switch, Table, Tabs, Tooltip, message };
+export type { ColumnsType, TabItemType, TabsProps };
