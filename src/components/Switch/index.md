@@ -1,3 +1,12 @@
+---
+category: Components
+title: Switch 开关
+toc: content
+group:
+  title: 数据录入
+  order: 2
+---
+
 # Switch 开关
 
 开关选择器。

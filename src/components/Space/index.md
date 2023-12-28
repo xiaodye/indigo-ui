@@ -1,3 +1,12 @@
+---
+category: Components
+title: Space 间距
+toc: content
+group:
+  title: 基础组件
+  order: 1
+---
+
 # Space 间距
 
 设置组件之间的间距。

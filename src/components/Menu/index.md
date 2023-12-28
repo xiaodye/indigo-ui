@@ -1,3 +1,12 @@
+---
+category: Components
+title: Menu 导航菜单
+toc: content
+group:
+  title: 基础组件
+  order: 1
+---
+
 # Menu 导航菜单
 
 为页面和功能提供导航的菜单列表。

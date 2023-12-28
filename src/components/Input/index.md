@@ -1,3 +1,12 @@
+---
+category: Components
+title: Input 输入框
+toc: content
+group:
+  title: 数据录入
+  order: 2
+---
+
 # Input 输入框
 
 通过鼠标或键盘输入内容，是最基础的表单域的包装。

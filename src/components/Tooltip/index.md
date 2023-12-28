@@ -1,3 +1,12 @@
+---
+category: Components
+title: Tooltip 文字提示
+toc: content
+group:
+  title: 反馈
+  order: 4
+---
+
 # Tooltip 文字提示
 
 简单的文字提示气泡框。

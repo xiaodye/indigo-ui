@@ -1,3 +1,12 @@
+---
+category: Components
+title: Tabs 标签页
+toc: content
+group:
+  title: 基础组件
+  order: 1
+---
+
 # Tabs 标签页
 
 网页常用 tabs 标签页，常用于选项卡切换组件。

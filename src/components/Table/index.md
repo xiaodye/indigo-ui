@@ -1,3 +1,12 @@
+---
+category: Components
+title: Table 表格
+toc: content
+group:
+  title: 数据展示
+  order: 3
+---
+
 # Table 表格
 
 用于展示多条结构类似的数据
