@@ -7,5 +7,16 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": "never"
   },
-  "cSpell.words": ["ahooks", "Appstore", "commitlint", "dumi", "dumirc", "nums", "packagejson", "stylelint", "umijs"]
+  "cSpell.words": [
+    "ahooks",
+    "Appstore",
+    "commitlint",
+    "dumi",
+    "dumirc",
+    "nums",
+    "packagejson",
+    "preinstall",
+    "stylelint",
+    "umijs"
+  ]
 }
