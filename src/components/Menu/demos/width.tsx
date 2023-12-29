@@ -40,6 +40,7 @@ const App: FC = () => {
   ];
 
   const onSelect = (page: string) => {
+    // eslint-disable-next-line no-console
     console.log(page);
   };
 
