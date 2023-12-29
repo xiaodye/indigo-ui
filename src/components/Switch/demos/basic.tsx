@@ -1,4 +1,4 @@
-import { Switch } from 'cobalt-ui';
+import { Switch } from '@indigo-ui/components';
 import { FC } from 'react';
 
 const App: FC = () => {

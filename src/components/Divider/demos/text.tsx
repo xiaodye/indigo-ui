@@ -1,4 +1,4 @@
-import { Divider } from 'cobalt-ui';
+import { Divider } from '@indigo-ui/components';
 import { FC } from 'react';
 
 const App: FC = () => {

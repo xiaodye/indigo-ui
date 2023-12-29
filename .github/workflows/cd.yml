@@ -10,7 +10,7 @@ jobs:
     environment: npm
 
     steps:
-      - name: checkout code
+      - name: Git checkout
         uses: actions/checkout@master
       - name: Install pnpm
         uses: pnpm/action-setup@v2.1.0

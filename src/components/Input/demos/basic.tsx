@@ -1,4 +1,4 @@
-import { Input } from 'cobalt-ui';
+import { Input } from '@indigo-ui/components';
 import { FC } from 'react';
 
 const App: FC = () => {
