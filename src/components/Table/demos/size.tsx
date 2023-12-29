@@ -1,4 +1,4 @@
-import { Button, ColumnsType, Space, Table } from 'cobalt-ui';
+import { Button, ColumnsType, Space, Table } from '@indigo-ui/components';
 import { FC, useState } from 'react';
 
 type DataType = {

@@ -1,5 +1,5 @@
 import { BugTwoTone } from '@ant-design/icons';
-import { Button, Space, TabItemType, Tabs } from 'cobalt-ui';
+import { Button, Space, TabItemType, Tabs } from '@indigo-ui/components';
 import { FC } from 'react';
 
 const App: FC = () => {

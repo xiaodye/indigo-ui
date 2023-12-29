@@ -1,5 +1,5 @@
 import { SearchOutlined, SendOutlined } from '@ant-design/icons';
-import { Input, Space } from 'cobalt-ui';
+import { Input, Space } from '@indigo-ui/components';
 import { FC } from 'react';
 
 const App: FC = () => {

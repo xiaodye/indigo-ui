@@ -1,4 +1,4 @@
-import { Button, message, Space } from 'cobalt-ui';
+import { Button, message, Space } from '@indigo-ui/components';
 import { FC } from 'react';
 
 const App: FC = () => {

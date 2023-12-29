@@ -1,4 +1,4 @@
-import { TabItemType, Tabs } from 'cobalt-ui';
+import { TabItemType, Tabs } from '@indigo-ui/components';
 import { FC } from 'react';
 
 const App: FC = () => {

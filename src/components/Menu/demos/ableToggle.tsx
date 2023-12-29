@@ -1,5 +1,5 @@
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
-import { Menu } from 'cobalt-ui';
+import { Menu } from '@indigo-ui/components';
 import { FC } from 'react';
 
 const App: FC = () => {

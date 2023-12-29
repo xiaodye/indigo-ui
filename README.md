@@ -1,7 +1,7 @@
-# cobalt-ui
+# indigo-ui
 
-[![NPM version](https://img.shields.io/npm/v/cobalt-ui.svg?style=flat)](https://npmjs.org/package/cobalt-ui)
-[![NPM downloads](http://img.shields.io/npm/dm/cobalt-ui.svg?style=flat)](https://npmjs.org/package/cobalt-ui)
+[![NPM version](https://img.shields.io/npm/v/@indigo-ui/components.svg?style=flat)](https://npmjs.org/package/@indigo-ui/components)
+[![NPM downloads](http://img.shields.io/npm/dm/@indigo-ui/components.svg?style=flat)](https://npmjs.org/package/@indigo-ui/components)
 
 A react library developed with dumi
 
