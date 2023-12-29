@@ -28,3 +28,7 @@ group:
 可以通过设置 color 属性来控制提示的颜色。
 
 <code src="./demos/color.tsx"></code>
+
+## API
+
+<API id="Tooltip"></API>

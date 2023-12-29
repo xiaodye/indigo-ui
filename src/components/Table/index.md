@@ -28,3 +28,7 @@ group:
 通过设置 size 可以调整表格尺寸
 
 <code src="./demos/size.tsx"></code>
+
+## API
+
+<API id="Table"></API>

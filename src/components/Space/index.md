@@ -38,3 +38,7 @@ group:
 通过设置 size 为 large middle 分别把间距设为大、中间距。若不设置 size，则间距为小。
 
 <code src="./demos/size.tsx"></code>
+
+## API
+
+<API id="Space"></API>

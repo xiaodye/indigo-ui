@@ -41,4 +41,6 @@ group:
 
 <code src="./demos/type.tsx"></code>
 
-<!-- <API></API> -->
+## API
+
+<API id="Divider"></API>

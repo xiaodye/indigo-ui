@@ -40,3 +40,7 @@ group:
 `checkedChildren` 自定义选中内容， `unCheckedChildren` 自定义未选中内容。
 
 <code src="./demos/checkedChildren.tsx" ></code>
+
+## API
+
+<API id="Switch"></API>

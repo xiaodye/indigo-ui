@@ -45,4 +45,6 @@ group:
 
 <code src="./demos/defaultOpen.tsx"></code>
 
-<API/>
+## API
+
+<API id="Menu"></API>

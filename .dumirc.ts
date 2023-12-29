@@ -9,6 +9,7 @@ export default defineConfig({
       { title: '组件', link: '/components/Button' },
     ],
   },
+  apiParser: {},
   resolve: {
     atomDirs: [
       // 在这里修改components的匹配路径
@@ -17,5 +18,6 @@ export default defineConfig({
         dir: './src/components',
       },
     ],
+    entryFile: './src/index.ts',
   },
 });

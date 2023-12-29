@@ -34,3 +34,7 @@ Input 输入框的基本使用
 密码输入框, 通过 showEyeIcon 属性控制是否显示密码
 
 <code src="./demos/password.tsx"></code>
+
+## API
+
+<API id="Input"></API>

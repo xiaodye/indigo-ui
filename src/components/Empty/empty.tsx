@@ -28,10 +28,26 @@ const defaultImage = (
 );
 
 type EmptyProps = {
+  /**
+   * @description 自定义样式
+   */
   style?: CSSProperties;
+  /**
+   * @description 自定义类名
+   */
   className?: string;
+  /**
+   * @description 描述
+   * @default 暂无数据
+   */
   description?: ReactNode;
+  /**
+   * @description 需要展示的图片
+   */
   image?: ReactNode;
+  /**
+   * @description 图片的样式
+   */
   imageStyle?: CSSProperties;
 };
 

@@ -4,21 +4,81 @@ import classNames from 'classnames';
 import { CSSProperties, ChangeEvent, FC, FocusEvent, KeyboardEvent, ReactNode, useState } from 'react';
 
 type InputProps = {
+  /**
+   * @description 自定义样式
+   */
   style?: CSSProperties;
+  /**
+   * @description 自定义类名
+   */
   className?: string;
+  /**
+   * @description 前置图标
+   */
   prefix?: ReactNode;
+  /**
+   * @description 后置图标
+   */
   suffix?: ReactNode;
+  /**
+   * @description 是否带清除图标
+   * @default false
+   */
   clearable?: boolean;
+  /**
+   * @description 提示文字
+   */
   placeholder?: string;
+  /**
+   * @description 表单值
+   */
   value?: string | number;
+  /**
+   * @description 输入框类型
+   */
   type?: string;
+  /**
+   * @description 展示密码
+   * @default text
+   */
   showPassword?: boolean;
+  /**
+   * @description 输入框类型
+   */
   status?: 'error' | 'warning';
+  /**
+   * @description 展示眼睛图标
+   * @default false
+   */
   showEyeIcon?: boolean;
+  /**
+   * @description 清除函数
+   * @returns
+   */
   clearableFn?: () => void;
+  /**
+   * 表单聚焦回调函数
+   * @param e
+   * @returns
+   */
   focus?: (e: FocusEvent<HTMLInputElement>) => void;
+  /**
+   * 输入框失焦回调函数
+   * @param e
+   * @returns
+   */
   blur?: (e: FocusEvent<HTMLInputElement>) => void;
+  /**
+   * 输入框值改变回调函数
+   * @param e
+   * @returns
+   */
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  /**
+   * 回车触发函数
+   * @param e
+   * @returns
+   */
   onEnter?: (e: KeyboardEvent<HTMLDivElement>) => void;
 };
 

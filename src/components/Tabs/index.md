@@ -28,3 +28,7 @@ type 为 card 类型的 tabs 页签。
 禁用某一项。
 
 <code src="./demos/disabled.tsx"></code>
+
+## API
+
+<API id="Tabs"></API>

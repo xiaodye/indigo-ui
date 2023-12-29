@@ -46,3 +46,7 @@ group:
 配置 disabled 禁用按钮。
 
 <code src="./demos/disabled.tsx"></code>
+
+## API
+
+<API id="Button"></API>
