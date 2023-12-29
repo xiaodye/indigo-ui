@@ -5,11 +5,33 @@ import { TabItemType } from './types';
 export type TabsType = 'line' | 'card';
 
 export type TabsProps = {
+  /**
+   * @description 自定义类名
+   * @default undefined
+   */
   className?: string;
+  /**
+   * @description 自定义样式
+   */
   style?: CSSProperties;
+  /**
+   * @description 默认选中的 key
+   */
   defaultActiveKey: string | number;
+  /**
+   * @description tabs 样式类型
+   */
   type?: TabsType;
+  /**
+   * @description 需要传入 items
+   */
   items: TabItemType[];
+  /**
+   * 点击触发 tab 触发的回调函数
+   * @param key
+   * @param e
+   * @returns
+   */
   onTabClick?: (key: string | number, e: MouseEvent) => void;
 };
 

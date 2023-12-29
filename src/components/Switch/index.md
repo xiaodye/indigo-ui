@@ -1,3 +1,12 @@
+---
+category: Components
+title: Switch 开关
+toc: content
+group:
+  title: 数据录入
+  order: 2
+---
+
 # Switch 开关
 
 开关选择器。
@@ -31,3 +40,7 @@
 `checkedChildren` 自定义选中内容， `unCheckedChildren` 自定义未选中内容。
 
 <code src="./demos/checkedChildren.tsx" ></code>
+
+## API
+
+<API id="Switch"></API>

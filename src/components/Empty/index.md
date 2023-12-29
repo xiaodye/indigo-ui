@@ -1,3 +1,12 @@
+---
+category: Components
+title: Empty 空状态
+toc: content
+group:
+  title: 数据展示
+  order: 3
+---
+
 # Empty 空状态
 
 空状态时的展示占位图。
@@ -13,3 +22,7 @@
 自定义文案和图片
 
 <code src="./demos/custom.tsx"></code>
+
+## API
+
+<API id="Empty"></API>

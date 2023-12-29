@@ -1,3 +1,12 @@
+---
+category: Components
+title: Tabs 标签页
+toc: content
+group:
+  title: 基础组件
+  order: 1
+---
+
 # Tabs 标签页
 
 网页常用 tabs 标签页，常用于选项卡切换组件。
@@ -19,3 +28,7 @@ type 为 card 类型的 tabs 页签。
 禁用某一项。
 
 <code src="./demos/disabled.tsx"></code>
+
+## API
+
+<API id="Tabs"></API>

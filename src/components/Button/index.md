@@ -1,3 +1,12 @@
+---
+category: Components
+title: Button 按钮
+toc: content
+group:
+  title: 基础组件
+  order: 1
+---
+
 # Button 按钮
 
 按钮用于开始一个即时操作。
@@ -37,3 +46,7 @@
 配置 disabled 禁用按钮。
 
 <code src="./demos/disabled.tsx"></code>
+
+## API
+
+<API id="Button"></API>

@@ -1,3 +1,12 @@
+---
+category: Components
+title: Divider 分割线
+toc: content
+group:
+  title: 数据展示
+  order: 3
+---
+
 # Divider 分割线
 
 <p>分隔内容的文档分割线</p>
@@ -32,4 +41,6 @@
 
 <code src="./demos/type.tsx"></code>
 
-<!-- <API></API> -->
+## API
+
+<API id="Divider"></API>

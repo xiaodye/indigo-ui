@@ -1,3 +1,12 @@
+---
+category: Components
+title: Space 间距
+toc: content
+group:
+  title: 基础组件
+  order: 1
+---
+
 # Space 间距
 
 设置组件之间的间距。
@@ -29,3 +38,7 @@
 通过设置 size 为 large middle 分别把间距设为大、中间距。若不设置 size，则间距为小。
 
 <code src="./demos/size.tsx"></code>
+
+## API
+
+<API id="Space"></API>

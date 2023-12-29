@@ -4,11 +4,30 @@ import { Empty } from '../Empty';
 import type { ColumnsType, TableSize } from './types';
 
 type TableProps = {
+  /**
+   * @description 自定义类名
+   */
   className?: string;
+  /**
+   * @description 自定义样式
+   */
   style?: CSSProperties;
+  /**
+   * @description 是否带边框
+   */
   border?: boolean;
+  /**
+   * @description 列映射
+   */
   columns: ColumnsType[];
+  /**
+   * @description 表格数据
+   */
   dataSource: object[];
+  /**
+   * @description 表格尺寸
+   * @default large
+   */
   size?: TableSize;
 };
 

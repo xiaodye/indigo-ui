@@ -9,14 +9,43 @@ el.className = 'cobalt-position-container';
 document.body.appendChild(el);
 
 type TooltipProps = {
+  /**
+   * @description 自定义样式
+   */
   style?: CSSProperties;
+  /**
+   * @description 自定义类名
+   */
   className?: string;
+  /**
+   * @description 需要悬浮提示的元素
+   */
   children: ReactNode;
+  /**
+   * @description 提示文字
+   */
   content: ReactNode;
+  /**
+   * @description 悬浮提示的方向
+   * @default top
+   */
   align?: TooltipAlign;
+  /**
+   * @description 自定义颜色
+   * @default #000
+   */
   color?: string;
-  onOpenChange?: (flag: boolean) => void;
+  /**
+   * @description 元素层级
+   * @default 1011
+   */
   zIndex?: number;
+  /**
+   * @description 回调函数
+   * @param flag
+   * @returns
+   */
+  onOpenChange?: (flag: boolean) => void;
 };
 
 const Tooltip: FC<TooltipProps> = ({

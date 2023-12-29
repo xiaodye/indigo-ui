@@ -1,3 +1,12 @@
+---
+category: Components
+title: Message 全局提示
+toc: content
+group:
+  title: 反馈
+  order: 4
+---
+
 # Message 全局提示
 
 全局展示操作反馈信息。
