@@ -1,7 +1,5 @@
 import classNames from 'classnames';
-import { CSSProperties, ReactNode, forwardRef, useContext, useEffect, useMemo, useState } from 'react';
-import { globalCtx } from '../../GlobalConfig';
-import { GlobalConfigProps } from '../../GlobalConfig/interface';
+import { CSSProperties, ReactNode, forwardRef, useEffect, useMemo, useState } from 'react';
 
 type SwitchProps = {
   /**
@@ -70,16 +68,12 @@ const Switch = forwardRef<HTMLDivElement, SwitchProps>(
       return theme;
     };
 
-    const getRenderColor = (isDark: boolean, globalColor: string | undefined): string => {
-      if (globalColor) {
-        return globalColor;
-      }
-
+    const getRenderColor = (isDark: boolean): string => {
       return isDark ? '#3C7EFF' : '#325DFF';
     };
 
     const theme = getSiteTheme();
-    const { globalColor } = useContext(globalCtx) as GlobalConfigProps;
+    // const { globalColor } = useContext(globalCtx) as GlobalConfigProps;
 
     const classes = classNames(className, 'cobalt-switch');
 
@@ -101,11 +95,11 @@ const Switch = forwardRef<HTMLDivElement, SwitchProps>(
             ? `4px`
             : '8px'
           : `${switchWidth - switchChildWidth - (typeof checkedChildren === 'string' ? 6 : -2)}px`,
-        '--switch-bg': switchStatus ? getRenderColor(theme === ('auto' || 'dark'), globalColor) : 'rgba(201,205,212,1)',
+        '--switch-bg': switchStatus ? getRenderColor(theme === ('auto' || 'dark')) : 'rgba(201,205,212,1)',
         '--disabled': disabled || loading ? 'not-allowed' : 'pointer',
         '--opacity': disabled || loading ? '0.6' : '1',
       };
-    }, [switchStatus, disabled, switchWidth, small, globalColor]);
+    }, [switchStatus, disabled, switchWidth, small]);
 
     useEffect(() => {
       if (checkedChildren && unCheckedChildren && document.querySelector('.cobalt-switch-child')) {

@@ -1,4 +1,3 @@
-import GlobalConfig from './GlobalConfig';
 import Button from './components/Button';
 import { Divider } from './components/Divider';
 import { Empty } from './components/Empty';
@@ -11,5 +10,5 @@ import { Tabs, type TabItemType, type TabsProps } from './components/Tabs';
 import { Tooltip } from './components/Tooltip';
 import { message } from './components/message';
 
-export { Button, Divider, Empty, GlobalConfig, Input, Menu, Space, Switch, Table, Tabs, Tooltip, message };
+export { Button, Divider, Empty, Input, Menu, Space, Switch, Table, Tabs, Tooltip, message };
 export type { ColumnsType, TabItemType, TabsProps };

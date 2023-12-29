@@ -1,7 +1,5 @@
 import classNames from 'classnames';
-import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode, useContext, useMemo } from 'react';
-import { globalCtx } from '../../GlobalConfig';
-import { GlobalConfigProps } from '../../GlobalConfig/interface';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
 
 type BaseButtonProps = {
   /**
@@ -54,20 +52,6 @@ const Button: React.FC<ButtonProps> = ({
   style,
   ...restProps
 }) => {
-  const { globalColor } = useContext(globalCtx) as GlobalConfigProps;
-
-  const buttonStyle = useMemo(() => {
-    if (type === 'link') {
-      return {
-        color: globalColor,
-      };
-    }
-    return {
-      backgroundColor: globalColor,
-      borderColor: globalColor,
-    };
-  }, [globalColor]);
-
   const classes = classNames('btn', className, {
     [`btn-${type}`]: type,
     [`btn-${size}`]: size,
@@ -77,14 +61,14 @@ const Button: React.FC<ButtonProps> = ({
 
   if (type === 'link' && href) {
     return (
-      <a className={classes} href={href} {...restProps} style={{ ...buttonStyle, ...style }}>
+      <a className={classes} href={href} {...restProps} style={style}>
         {children}
       </a>
     );
   }
 
   return (
-    <button type="button" className={classes} disabled={disabled} {...restProps} style={{ ...buttonStyle, ...style }}>
+    <button type="button" className={classes} disabled={disabled} {...restProps} style={style}>
       {children}
     </button>
   );
