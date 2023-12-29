@@ -21,6 +21,7 @@ const App: FC = () => {
   ];
 
   const handleClick = (key: string | number) => {
+    // eslint-disable-next-line no-console
     console.log(key);
   };
 

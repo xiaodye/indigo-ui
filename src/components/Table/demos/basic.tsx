@@ -50,6 +50,7 @@ const App: FC = () => {
           type="link"
           onClick={() => {
             // Message.info(`你点击的这个人叫${text.name}`);
+            // eslint-disable-next-line no-console
             console.log(text.name);
           }}
         >
