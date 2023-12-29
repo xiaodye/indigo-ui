@@ -20,7 +20,8 @@
     "prepare": "husky install && dumi setup",
     "prepublishOnly": "father doctor && npm run build",
     "start": "npm run dev",
-    "test all": "jest --coverage --bail"
+    "test all": "jest --coverage --bail",
+    "test:run": "jest --coverage --bail"
   },
   "commitlint": {
     "extends": [
