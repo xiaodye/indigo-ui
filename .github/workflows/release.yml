@@ -2,16 +2,16 @@ name: CD
 
 on:
   push:
-    branches: [main, publish]
+    branches: [release]
 
 jobs:
-  publish:
+  Release:
     runs-on: ubuntu-latest
     environment: npm
 
     steps:
       - name: Git checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v3
       - name: Install pnpm
         uses: pnpm/action-setup@v2.1.0
         with:
