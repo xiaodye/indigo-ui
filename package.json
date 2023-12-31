@@ -1,6 +1,6 @@
 {
   "name": "@indigo-ui/components",
-  "version": "0.2.2",
+  "version": "0.3.2",
   "description": "A react library developed with dumi",
   "homepage": "https://indigo-ui.vercel.app/",
   "repository": {
