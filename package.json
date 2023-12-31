@@ -2,6 +2,10 @@
   "name": "@indigo-ui/components",
   "version": "0.2.1",
   "description": "A react library developed with dumi",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiaodye/indigo-ui"
+  },
   "license": "MIT",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -21,8 +25,8 @@
     "prepare": "husky install && dumi setup",
     "prepublishOnly": "father doctor && npm run build",
     "start": "npm run dev",
-    "test all": "jest --coverage --bail",
-    "test:run": "jest --coverage --bail"
+    "test:coverage": "jest --coverage --bail",
+    "test:run": "jest --bail"
   },
   "commitlint": {
     "extends": [
