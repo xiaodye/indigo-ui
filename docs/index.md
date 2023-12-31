@@ -1,11 +1,11 @@
 ---
 hero:
-  title: library
-  description: A react library developed with dumi
+  title: Indigo UI
+  description: A Component Library for React
   actions:
-    - text: Hello
+    - text: 快速上手
       link: /
-    - text: World
+    - text: 查看组件
       link: /
 features:
   - title: Hello

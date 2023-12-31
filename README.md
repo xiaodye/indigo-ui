@@ -1,40 +1,56 @@
-# indigo-ui
+<p align="center">
+<img src="https://github.com/xiaodye/indigo-ui/public/logo.png" style="width:200px;" />
+</p>
 
-[![NPM version](https://img.shields.io/npm/v/@indigo-ui/components.svg?style=flat)](https://npmjs.org/package/@indigo-ui/components)
-[![NPM downloads](http://img.shields.io/npm/dm/@indigo-ui/components.svg?style=flat)](https://npmjs.org/package/@indigo-ui/components)
+<h1 align="center">Indigo UI</h1>
 
-A react library developed with dumi
+<p align="center">
+  一个基于 React + TypeScript 的组件库
+</p>
 
-## Usage
+<p align="center">
+  <img src="https://img.shields.io/npm/v/@indigo-ui/components.svg?style=flat" alt="NPM version">
+  <img src="http://img.shields.io/npm/dm/@indigo-ui/components.svg?style=flat" alt="NPM downloads">
+  <img src="https://github.com/xiaodye/indigo-ui/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI" style="max-width: 100%;"/>
+  <img src="https://img.shields.io/github/license/xiaodye/indigo-ui?color=red"/>
+</p>
 
-TODO
+## Features
 
-## Options
+- ⚡️ React 18, Dumi 2, Pnpm - born with fastness
+- 🦾 TypeScript, of course
+- 🗂 File based routing
+- ⚙️ Unit Testing with Jest and @testing-library/react
+- 😃 Eslint + Prettier + Stylelint + Husky
+- 🚘 CI/CD with GithubActions
 
-TODO
+## Install
 
-## Development
+从 yarn、npm 或者 pnpm 安装并引入 indigo-ui
 
 ```bash
-# install dependencies
-$ pnpm install
-
-# develop library by docs demo
-$ pnpm start
-
-# build library source code
-$ pnpm run build
-
-# build library source code in watch mode
-$ pnpm run build:watch
-
-# build docs
-$ pnpm run docs:build
-
-# check your project for potential problems
-$ pnpm run doctor
+pnpm add @indigo-ui/components
 ```
 
-## LICENSE
+## Quick Start
 
-MIT
+```tsx
+import { Button, Space } from '@indigo-ui/components';
+import { FC } from 'react';
+
+const App: FC = () => {
+  return (
+    <Space>
+      <h1>indigo-ui</h1>
+      <Button>默认按钮</Button>
+      <Button type="primary">主要按钮</Button>
+    </Space>
+  );
+};
+
+export default App;
+```
+
+## Browser Support
+
+Modern browsers and Internet Explorer 10+.
