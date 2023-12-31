@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/xiaodye/indigo-ui/public/logo.png" style="width:200px;" />
+<img src="https://github.com/xiaodye/indigo-ui/blob/0.3.2/public/logo.png" style="width:200px;" />
 </p>
 
 <h1 align="center">Indigo UI</h1>
