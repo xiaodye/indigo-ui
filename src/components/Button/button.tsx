@@ -1,7 +1,12 @@
 import classNames from 'classnames';
-import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
+import { CSSProperties, ReactNode } from 'react';
+// import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
 
-type BaseButtonProps = {
+type ButtonProps = {
+  /**
+   * @description 自定义样式
+   */
+  style?: CSSProperties;
   /**
    * @description 按钮类名
    */
@@ -27,7 +32,7 @@ type BaseButtonProps = {
    */
   children?: ReactNode;
   /**
-   * @description 点击跳转的地址，指定此属性 button 的行为和 a 链接一致
+   * @description 点击跳转的地址
    */
   href?: string;
   /**
@@ -37,9 +42,9 @@ type BaseButtonProps = {
   circle?: boolean;
 };
 
-type NativeButtonProps = BaseButtonProps & Omit<ButtonHTMLAttributes<HTMLElement>, 'type'>;
-type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>;
-type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
+// type NativeButtonProps = BaseButtonProps & Omit<ButtonHTMLAttributes<HTMLElement>, 'type'>;
+// type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>;
+// type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
 
 const Button: React.FC<ButtonProps> = ({
   type = 'default',
