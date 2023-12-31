@@ -1,12 +1,16 @@
-.token.operator {
-  background: none;
+.app {
+  color: aqua;
 }
 
-pre[class*='language-']::before,
+/* .token.operator {
+  background: none;
+} */
+
+/* pre[class*='language-']::before,
 pre[class*='language-']::after {
   box-shadow: none !important;
-}
+} */
 
-.prism-code {
+/* .prism-code {
   padding: 20px !important;
-}
+} */

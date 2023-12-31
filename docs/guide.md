@@ -12,9 +12,9 @@ title: 快速上手
   <img src="https://img.shields.io/github/license/xiaodye/indigo-ui?color=red"/>
 </div>
 
-`dumi-theme-antd` 是一款由 React + TypeScript 开发的组件库 🎉。主题风格参考 Antd Design。
+`Indigo UI` 是一款由 React + TypeScript 开发的组件库 🎉。参考了 Antd Design。
 
-作为一个组件库来说，它并不完美，一切为了学习而生 🖊，在此也不推荐投入生产环境 ⚠
+作为一个组件库来说，它并不完美，一切也是为了学习而生 🖊，在此也不推荐投入生产环境 ⚠
 
 当然，也可以以其中部分源码（or 思路）为地基，从而完善成自己的作品 🏢
 
