@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { CSSProperties, FC, ReactNode, memo } from 'react';
+import './style.scss';
 
 type DividerProps = {
   children?: ReactNode;

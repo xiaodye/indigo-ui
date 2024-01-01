@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { CSSProperties, FC, ReactNode, useRef } from 'react';
 import ReactDOM from 'react-dom/client';
+import './style.scss';
 import TooltipEl from './tooltipItem';
 import type { TooltipAlign } from './types';
 

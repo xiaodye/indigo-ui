@@ -15,13 +15,13 @@ features:
     tag: power
     description: Customize any part of our components to match your design needs.
   - title: Accessible
-    icon: https://api.iconify.design/fluent:accessibility-checkmark-20-regular.svg
+    icon: https://api.iconify.design/icon-park:multi-function-knife.svg
     tag: manual
-    description: Chakra UI strictly follows WAI-ARIA standards for all components.
+    description: Indigo UI strictly follows WAI-ARIA standards for all components.
   - title: Light and Dark UI
-    icon: https://api.iconify.design/icon-park:dark-mode.svg
+    icon: https://api.iconify.design/vscode-icons:folder-type-typescript.svg
     tag: advance
-    description: Optimized for multiple color modes. Use light or dark, your choice.
+    description: Full TypeScript typing, your choice.
   # - title: Fully Typed
   #   icon: https://api.iconify.design/vscode-icons:folder-type-typescript.svg
   #   description: Full TypeScript typing.

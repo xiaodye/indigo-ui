@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { CSSProperties, FC } from 'react';
 import { Empty } from '../Empty';
+import './style.scss';
 import type { ColumnsType, TableSize } from './types';
 
 type TableProps = {

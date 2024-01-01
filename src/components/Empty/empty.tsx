@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { CSSProperties, FC, ReactNode } from 'react';
+import './style.scss';
 
 const defaultImage = (
   <svg className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="70" height="70">

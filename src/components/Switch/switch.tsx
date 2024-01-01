@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { CSSProperties, ReactNode, forwardRef, useEffect, useMemo, useState } from 'react';
+import './style.scss';
 
 type SwitchProps = {
   /**

@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { CSSProperties, FC, MouseEvent, useState } from 'react';
+import './style.scss';
 import { TabItemType } from './types';
 
 export type TabsType = 'line' | 'card';
