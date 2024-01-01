@@ -58,9 +58,9 @@ export default defineConfig({
       // 在这里修改components的匹配路径
       {
         type: 'component',
-        dir: './src/components',
+        dir: './packages/components/src/components',
       },
     ],
-    entryFile: './src/index.ts',
+    entryFile: './packages/components/src/index.ts',
   },
 });

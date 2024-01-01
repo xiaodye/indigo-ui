@@ -8,8 +8,8 @@
     "baseUrl": "./",
     "paths": {
       "@@/*": [".dumi/tmp/*"],
-      "@indigo-ui/components": ["packages/components/src"],
-      "@indigo-ui/components/*": ["packages/components/src/*", "*"]
+      "@indigo-ui/components": ["src"],
+      "@indigo-ui/components/*": ["src/*", "*"]
     }
   },
   "include": [".dumirc.ts", "setupJestDom.ts", "src/**/*"]

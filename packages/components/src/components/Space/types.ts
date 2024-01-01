@@ -37,4 +37,4 @@ type SpaceProps = {
   align?: AlignType;
 };
 
-export { SpaceProps, SpaceAlignParamsType, SizeType, AlignType, AlignItemsType };
+export { AlignItemsType, AlignType, SizeType, SpaceAlignParamsType, SpaceProps };

@@ -7,19 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@ant-design/icons':
-        specifier: ^5.2.6
-        version: 5.2.6(react-dom@18.2.0)(react@18.2.0)
-      ahooks:
-        specifier: ^3.7.8
-        version: 3.7.8(react@18.2.0)
-      classnames:
-        specifier: ^2.3.2
-        version: 2.3.2
-      react-transition-group:
-        specifier: ^4.4.5
-        version: 4.4.5(react-dom@18.2.0)(react@18.2.0)
     devDependencies:
       '@commitlint/cli':
         specifier: ^17.1.2
@@ -93,6 +80,21 @@ importers:
       ts-jest:
         specifier: ^29.1.1
         version: 29.1.1(@babel/core@7.23.5)(jest@29.7.0)(typescript@5.3.2)
+
+  packages/components:
+    dependencies:
+      '@ant-design/icons':
+        specifier: ^5.2.6
+        version: 5.2.6(react-dom@18.2.0)(react@18.2.0)
+      ahooks:
+        specifier: ^3.7.8
+        version: 3.7.8(react@18.2.0)
+      classnames:
+        specifier: ^2.3.2
+        version: 2.5.1
+      react-transition-group:
+        specifier: ^4.4.5
+        version: 4.4.5(react-dom@18.2.0)(react@18.2.0)
 
   packages/hooks: {}
 
@@ -5063,7 +5065,7 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@babel/runtime': 7.23.5
+      '@babel/runtime': 7.23.7
       '@types/js-cookie': 2.2.7
       ahooks-v3-count: 1.0.0
       dayjs: 1.11.10
@@ -5938,7 +5940,6 @@ packages:
 
   /classnames@2.5.1:
     resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
-    dev: true
 
   /clean-css@5.3.3:
     resolution: {integrity: sha512-D5J+kHaVb/wKSFcyyV75uCn8fiY4sV38XJoe4CUyGQ+mOU/fMVYUdH1hJC+CJQ5uY3EnW27SbJYS4X8BiLrAFg==}
