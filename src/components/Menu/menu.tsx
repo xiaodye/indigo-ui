@@ -2,6 +2,7 @@ import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';
 import { useMount } from 'ahooks';
 import classNames from 'classnames';
 import { CSSProperties, FC, useCallback, useEffect, useState } from 'react';
+import './style.scss';
 
 interface MenuProps {
   /**

@@ -10,6 +10,7 @@ import { Tabs, type TabItemType, type TabsProps } from './components/Tabs';
 import { Tooltip } from './components/Tooltip';
 import { message } from './components/message';
 import './index.css';
+import './styles/index.scss';
 
 export { Button, Divider, Empty, Input, Menu, Space, Switch, Table, Tabs, Tooltip, message };
 export type { ColumnsType, TabItemType, TabsProps };

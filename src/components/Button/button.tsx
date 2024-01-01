@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { CSSProperties, ReactNode } from 'react';
+import './style.scss';
 // import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
 
 type ButtonProps = {
