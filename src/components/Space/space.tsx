@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { Children, FC, ReactNode, memo, useMemo } from 'react';
+import './style.scss';
 import { AlignItemsType, AlignType, SizeType, SpaceAlignParamsType, SpaceProps } from './types';
 
 const gap_size_map = new Map<SizeType, number>([

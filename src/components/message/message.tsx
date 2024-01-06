@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { FC, ReactNode, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { CSSTransition } from 'react-transition-group';
+import './style.scss';
 
 type MessageType = 'success' | 'error' | 'warning' | 'info';
 

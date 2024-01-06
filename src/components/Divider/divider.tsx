@@ -1,7 +1,11 @@
 import classNames from 'classnames';
 import { CSSProperties, FC, ReactNode, memo } from 'react';
+import './style.scss';
 
 type DividerProps = {
+  /**
+   * @description 自定义文本
+   */
   children?: ReactNode;
   /**
    * @description 自定义样式
@@ -67,7 +71,7 @@ const Divider: FC<DividerProps> = memo((props) => {
   );
 
   return (
-    <div className={classes} style={style}>
+    <div className={classes} style={style} role="separator">
       {children && (
         <span
           className="divider-inner-text"

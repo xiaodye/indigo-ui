@@ -5,6 +5,9 @@
     "esbenp.prettier-vscode",
     "streetsidesoftware.code-spell-checker",
     "github.vscode-github-actions",
-    "orta.vscode-jest"
+    "orta.vscode-jest",
+    "stylelint.vscode-stylelint",
+    "syler.sass-indented",
+    "editorconfig.editorconfig"
   ]
 }

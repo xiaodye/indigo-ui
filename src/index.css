@@ -1,4 +1,16 @@
 .app {
   color: aqua;
-  text-align: center;
 }
+
+/* .token.operator {
+  background: none;
+} */
+
+/* pre[class*='language-']::before,
+pre[class*='language-']::after {
+  box-shadow: none !important;
+} */
+
+/* .prism-code {
+  padding: 20px !important;
+} */
