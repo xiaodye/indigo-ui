@@ -9,7 +9,7 @@ const App: FC = () => {
       description={
         <span>
           没找到数据，
-          <a href="https://www.baidu.com" target="_back">
+          <a href="https://www.baidu.com" target="_back" style={{ color: '#1890ff' }}>
             去百度找找
           </a>
         </span>
