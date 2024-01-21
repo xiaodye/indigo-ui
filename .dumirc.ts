@@ -1,5 +1,6 @@
 import { defineConfig } from 'dumi';
 import { defineThemeConfig } from 'dumi-theme-chakra';
+import path from 'node:path';
 
 export enum PRISMTHEME {
   DRACULA = 'dracula',
@@ -53,6 +54,9 @@ export default defineConfig({
   },
 
   apiParser: {},
+  alias: {
+    pkg: path.join(__dirname, 'packages/components/src'),
+  },
   resolve: {
     atomDirs: [
       // 在这里修改components的匹配路径
