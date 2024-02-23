@@ -19,7 +19,7 @@ export default async () => {
   log('🚌 创建项目:' + name);
 
   // 从github克隆项目到指定文件夹
-  await clone('github:smarty-team/smarty-ui-app-js-template', name);
+  await clone('direct:https://gitee.com/xiaodye/indigo-ui-vite-template', name);
 
   // 生成路由定义
   compile(

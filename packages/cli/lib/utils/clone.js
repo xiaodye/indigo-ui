@@ -5,6 +5,6 @@ import { promisify } from 'util';
 export default async (repo, desc) => {
   const process = ora(`下载.....${repo}`);
   process.start();
-  await promisify(download)(repo, desc);
+  await promisify(download)(repo, desc, { clone: true });
   process.succeed();
 };
