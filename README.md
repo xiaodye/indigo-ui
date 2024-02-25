@@ -19,8 +19,8 @@
 
 - ⚡️ 使用 React 18、Dumi 2 和 Pnpm，保证快速高效的开发体验。
 - 🦾 使用 TypeScript, 提供一流的类型支持。
-- 🗂 提供 cli 工具，支持快速创建应用。。
-- ⚙️ 使用 Jest 和 @testing-library/react 进行单元测试
+- 🗂 提供 cli 工具，支持快速创建应用。
+- ⚙️ 使用 Jest 和 @testing-library/react 进行单元测试。
 - 🌳 Eslint + Prettier + Stylelint + commitlint 保证代码风格和质量。
 - 🎨 使用 GithubActions 进行 CI/CD。
 
@@ -46,8 +46,6 @@ create-indigo-ui-app
 
 ## 快速开始
 
-1. 通过包引入使用
-
 ```tsx
 import { Button, Space } from '@indigo-ui/components';
 import { FC } from 'react';
@@ -67,6 +65,6 @@ export default App;
 
 ## 后续计划
 
-- 逐步改为 Monorepo 架构
+- 逐步改为 Monorepo 项目架构
 - 增加更多的组件支持
 - 提供 @indigo-ui/cli、@indiog-ui/hooks、@indigo-ui/icons
