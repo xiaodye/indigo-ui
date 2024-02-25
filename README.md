@@ -5,7 +5,7 @@
 <h1 align="center">Indigo UI</h1>
 
 <p align="center">
-  一个基于 React + TypeScript 的组件库
+  一个基于 dumi2 开发的 react 组件库
 </p>
 
 <p align="center">
@@ -15,24 +15,36 @@
   <img src="https://img.shields.io/github/license/xiaodye/indigo-ui?color=red"/>
 </p>
 
-## Features
+## 特性
 
-- ⚡️ React 18, Dumi 2, Pnpm - born with fastness
-- 🦾 TypeScript, of course
-- 🗂 File based routing
-- ⚙️ Unit Testing with Jest and @testing-library/react
-- 😃 Eslint + Prettier + Stylelint + Husky
-- 🚘 CI/CD with GithubActions
+- ⚡️ 使用 React 18、Dumi 2 和 Pnpm，保证快速高效的开发体验。
+- 🦾 使用 TypeScript, 提供一流的类型支持。
+- 🗂 提供 cli 工具，支持快速创建应用。
+- ⚙️ 使用 Jest 和 @testing-library/react 进行单元测试。
+- 🌳 Eslint + Prettier + Stylelint + commitlint 保证代码风格和质量。
+- 🎨 使用 GithubActions 进行 CI/CD。
 
-## Install
+## 安装
 
-从 yarn、npm 或者 pnpm 安装并引入 indigo-ui
+1. 从 yarn、npm 或者 pnpm 安装并引入 indigo-ui
 
 ```bash
 pnpm add @indigo-ui/components
 ```
 
-## Quick Start
+2. 通过 cli 工具一键创建应用（beta）
+
+```shell
+pnpm i -g @indigo-ui/cli
+```
+
+```shell
+create-indigo-ui-app
+```
+
+![Snipaste_2024-02-25_18-39-59.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c687a82fa60f404a94e96570e5de095a~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1028&h=402&s=57475&e=png&b=16161d)
+
+## 快速开始
 
 ```tsx
 import { Button, Space } from '@indigo-ui/components';
@@ -51,6 +63,8 @@ const App: FC = () => {
 export default App;
 ```
 
-## Browser Support
+## 后续计划
 
-Modern browsers and Internet Explorer 10+.
+- 逐步改为 Monorepo 项目架构
+- 增加更多的组件支持
+- 提供 @indigo-ui/cli、@indiog-ui/hooks、@indigo-ui/icons
