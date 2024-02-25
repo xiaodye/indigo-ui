@@ -9,7 +9,7 @@ import inquirer from 'inquirer';
 const log = (content) => console.log(chalk.green(content));
 
 const opt = {
-  'IndigoUI应用模版(Vite)': 'indigo-ui-vite',
+  'IndigoUI模版应用(Vite)': 'indigo-ui-vite',
   'IndigoUI模版应用(webpack)': 'admin',
   退出: 'quit',
 };
