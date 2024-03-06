@@ -68,3 +68,4 @@ export default App;
 - 逐步改为 Monorepo 项目架构
 - 增加更多的组件支持
 - 提供 @indigo-ui/cli、@indiog-ui/hooks、@indigo-ui/icons
+- 支持 nginx 和 docker 部署文档站点
