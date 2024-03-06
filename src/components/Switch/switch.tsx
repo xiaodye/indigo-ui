@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { CSSProperties, ReactNode, forwardRef, useEffect, useMemo, useState } from 'react';
+import './style.scss';
 
 type SwitchProps = {
   /**
@@ -111,7 +112,7 @@ const Switch = forwardRef<HTMLDivElement, SwitchProps>(
     }, [document.querySelector('.cobalt-switch-child')?.clientWidth, checkedChildren, unCheckedChildren]);
 
     return (
-      <div className={classes} style={{ ...style, ...switchStyle }} onClick={toggleSwitch} ref={ref}>
+      <div role="switch" className={classes} style={{ ...style, ...switchStyle }} onClick={toggleSwitch} ref={ref}>
         <div className="cobalt-switch-dot">{loading}</div>
         {checkedChildren && unCheckedChildren && (
           <div className="cobalt-switch-child">{switchStatus ? checkedChildren : unCheckedChildren}</div>

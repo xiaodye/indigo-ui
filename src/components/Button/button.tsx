@@ -1,7 +1,13 @@
 import classNames from 'classnames';
-import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
+import { CSSProperties, MouseEventHandler, ReactNode } from 'react';
+import './style.scss';
+// import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
 
-type BaseButtonProps = {
+type ButtonProps = {
+  /**
+   * @description 自定义样式
+   */
+  style?: CSSProperties;
   /**
    * @description 按钮类名
    */
@@ -27,7 +33,7 @@ type BaseButtonProps = {
    */
   children?: ReactNode;
   /**
-   * @description 点击跳转的地址，指定此属性 button 的行为和 a 链接一致
+   * @description 点击跳转的地址
    */
   href?: string;
   /**
@@ -35,11 +41,16 @@ type BaseButtonProps = {
    * @default false
    */
   circle?: boolean;
+  /**
+   * @description 点击事件
+   * @returns
+   */
+  onClick?: MouseEventHandler<HTMLElement>;
 };
 
-type NativeButtonProps = BaseButtonProps & Omit<ButtonHTMLAttributes<HTMLElement>, 'type'>;
-type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>;
-type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
+// type NativeButtonProps = BaseButtonProps & Omit<ButtonHTMLAttributes<HTMLElement>, 'type'>;
+// type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>;
+// type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
 
 const Button: React.FC<ButtonProps> = ({
   type = 'default',
@@ -50,6 +61,7 @@ const Button: React.FC<ButtonProps> = ({
   circle,
   className,
   style,
+  onClick,
   ...restProps
 }) => {
   const classes = classNames('btn', className, {
@@ -61,14 +73,14 @@ const Button: React.FC<ButtonProps> = ({
 
   if (type === 'link' && href) {
     return (
-      <a className={classes} href={href} {...restProps} style={style}>
+      <a className={classes} href={href} {...restProps} style={style} onClick={onClick}>
         {children}
       </a>
     );
   }
 
   return (
-    <button type="button" className={classes} disabled={disabled} {...restProps} style={style}>
+    <button type="button" className={classes} disabled={disabled} onClick={onClick} {...restProps} style={style}>
       {children}
     </button>
   );

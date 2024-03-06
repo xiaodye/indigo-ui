@@ -1,7 +1,12 @@
 {
   "name": "@indigo-ui/components",
-  "version": "0.2.1",
+  "version": "0.5.12",
   "description": "A react library developed with dumi",
+  "homepage": "https://indigo-ui.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiaodye/indigo-ui"
+  },
   "license": "MIT",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -21,8 +26,8 @@
     "prepare": "husky install && dumi setup",
     "prepublishOnly": "father doctor && npm run build",
     "start": "npm run dev",
-    "test all": "jest --coverage --bail",
-    "test:run": "jest --coverage --bail"
+    "test:coverage": "jest --coverage --bail",
+    "test:run": "jest --bail"
   },
   "commitlint": {
     "extends": [
@@ -61,8 +66,10 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@types/react-transition-group": "^4.4.10",
+    "@types/react-window": "^1.8.8",
     "@umijs/lint": "^4.0.0",
     "dumi": "^2.2.13",
+    "dumi-theme-chakra": "^0.0.22",
     "eslint": "^8.23.0",
     "father": "^4.1.0",
     "husky": "^8.0.1",
@@ -74,6 +81,7 @@
     "prettier-plugin-packagejson": "^2.2.18",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-window": "^1.8.10",
     "stylelint": "^14.9.1",
     "ts-jest": "^29.1.1"
   },

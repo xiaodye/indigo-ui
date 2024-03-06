@@ -120,8 +120,9 @@ h6 {
 // bottom margin to use `rem` units instead of `em`.
 
 p {
-  margin-top: 0;
-  margin-bottom: $paragraph-margin-bottom;
+  margin: 0;
+  // margin-top: 0;
+  // margin-bottom: $paragraph-margin-bottom;
 }
 
 // Abbreviations
@@ -339,6 +340,7 @@ label {
 button {
   // stylelint-disable-next-line property-blacklist
   border-radius: 0;
+  outline: none !important;
 }
 
 // Work around a Firefox/IE bug where the transparent `button` background
